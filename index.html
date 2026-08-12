@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Play the retro Super Mario Bros web game! Jump, collect coins, grow with mushrooms, and reach the castle in this responsive HTML/CSS/JS recreation.">
+    <link rel="stylesheet" href="style.css">
+    <title>Super Mario Bros - Retro Web Adventure</title>
+</head>
+
+<body>
+    <main class="game" id="game-container">
+        <h1 class="sr-only">Super Mario Bros Retro Web Game</h1>
+
+        <div class="hud" id="hud">
+            <div class="hud-item">
+                <span class="hud-label">WORLD</span>
+                <span class="hud-value">1-1</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">TIME</span>
+                <span class="hud-value" id="time-val">360</span>
+            </div>
+        </div>
+
+        <div class="overlay-screen hidden" id="start-screen">
+            <h2 class="retro-title">SUPER MARIO</h2>
+            <p class="blink">PRESS ENTER OR CLICK TO START</p>
+            <div class="instructions">
+                <p>MOVE: A/D or ARROW KEYS</p>
+                <p>JUMP: SPACE or W or UP ARROW</p>
+            </div>
+        </div>
+
+        <div class="overlay-screen hidden" id="game-over-screen">
+            <h2 class="retro-title danger">GAME OVER</h2>
+            <p class="blink">PRESS ENTER TO RESTART</p>
+        </div>
+
+        <div class="overlay-screen hidden" id="victory-screen">
+            <h2 class="retro-title success">STAGE CLEAR!</h2>
+            <p class="blink">PRESS ENTER TO PLAY AGAIN</p>
+        </div>
+
+        <div class="world" id="world-container">
+            <div class="question q1" id="q1">?</div>
+            <div class="question q2" id="q2">?</div>
+            <div class="question q3" id="q3">?</div>
+
+            <div class="brick-b1" id="b1"></div>
+            <div class="brick-b2" id="b2"></div>
+
+            <img src="Assets/pipe1.png" alt="Small green pipe" class="pipe-p1" id="pipe-p1-1">
+            <img src="Assets/pipe2.png" alt="Medium green pipe" class="pipe-p2" id="pipe-p2-1">
+            <img src="Assets/pipe3.png" alt="Large green pipe" class="pipe-p3" id="pipe-p3-1">
+
+
+            <img src="Assets/mushroomm.png" alt="Super Mushroom power-up" class="mushroom hidden" id="mushroom">
+
+            <div class="flagpole" id="flagpole">
+                <div class="pole"></div>
+                <div class="flag" id="flag"></div>
+                <div class="flag-ball"></div>
+            </div>
+
+            <div class="castle" id="castle">
+                <div class="castle-top"></div>
+                <div class="castle-body">
+                    <div class="castle-door"></div>
+                </div>
+            </div>
+
+            <div class="player" id="player">
+                <img src="Assets/player.gif" alt="Mario running sprite" id="player-img">
+                <canvas id="player-canvas" class="hidden"></canvas>
+            </div>
+        </div>
+
+        <div class="ground"></div>
+
+        <div class="mobile-controls" id="mobile-controls">
+            <div class="dpad">
+                <button class="control-btn" id="btn-left" aria-label="Move Left">◀</button>
+                <button class="control-btn" id="btn-right" aria-label="Move Right">▶</button>
+            </div>
+            <div class="action-buttons">
+                <button class="control-btn jump-btn" id="btn-jump" aria-label="Jump">A</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
